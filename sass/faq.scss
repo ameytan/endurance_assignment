@@ -1,0 +1,82 @@
+/**
+ * @file
+ * Common CSS.
+ */
+
+.faq {
+  margin: 70px auto 100px;
+  @include title;
+  @media #{$mobile} {
+    margin: 35px auto 50px;
+  }
+  .title {
+    width: 380px;
+    @media #{$mobile} {
+      width: 160px;
+    }
+  }
+  .questions_main_wrapper {
+    border: solid 1px #d3d3d3;
+    border-radius: 5px;
+    .question_wrapper {
+      font-size: 15px;
+      @media #{$mobile} {
+        font-size: 14px;
+      }
+      &:last-child {
+        .question {
+          border: 0;
+        }
+        .answer {
+          border-bottom: 0;
+        }
+      }
+      &.active {
+        .question {
+          background: #f9f9f9 url(#{$imgurl}/minus.jpg) right 20px center no-repeat;
+          @media #{$mobile} {
+            background-size: 15px;
+          }
+        }
+        &:first-child {
+          .question {
+            border-radius: 5px 5px 0 0;
+          }
+        }
+        &:last-child {
+          .question {
+            border-bottom: solid 1px #d3d3d3;
+          }
+        }
+      }
+      .question {
+        font-weight: 700;
+        padding: 16px 20px;
+        border-bottom: solid 1px #d3d3d3;
+        cursor: pointer;
+        background: url(#{$imgurl}/plus.jpg) right 20px center no-repeat;
+        &:hover {
+          background-color: #f9f9f9;
+        }
+        @media #{$mobile} {
+          padding: 10px 15px;
+          background-size: 15px;
+        }
+      }
+      .answer {
+        padding: 16px 20px 38px;
+        line-height: 20px;
+        border-bottom: solid 1px #d3d3d3;
+        display: none;
+        @media #{$mobile} {
+          padding: 10px 15px 25px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+

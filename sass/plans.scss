@@ -1,0 +1,235 @@
+/**
+ * @file
+ * Common CSS.
+ */
+
+@mixin blue_circle {
+  width: 5px;
+  background: #fff;
+  border: solid 5px #196ecb;
+  border-radius: 10px;
+  height: 5px;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+}
+
+@mixin grey_circle {
+  width: 15px;
+  background: #f5f5f5;
+  border: solid 1px #dadada;
+  border-radius: 10px;
+  height: 15px;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+}
+
+.plans {
+  padding: 50px 0;
+  background: #f8f8f8;
+  @media #{$mobile} {
+    padding: 25px 0;
+  }
+  .container {
+    @include title;
+    .title {
+      width: 630px;
+      @media #{$ipad} {
+        width: 600px;
+      }
+      @media #{$mobile} {
+        width: 100%;
+        &:before, &:after {
+          display: none;
+        }
+      }
+    }
+    .sub_title {
+      overflow: hidden;
+      width: 600px;
+      margin: 50px auto 30px;
+      font-size: 16px;
+      position: relative;
+      padding-top: 8px;
+      transition: all 10s ease;
+      &.step2 {
+        .blue_circle {
+          @include grey_circle;
+        }
+        .grey_circle {
+          @include blue_circle;
+        }
+        .right {
+          border-top: solid 2px #196ecb;
+          color: #1b1b1b;
+        }
+      }
+      .blue_circle {
+        @include blue_circle;
+        left: 70px;
+        @media #{$mobile} {
+          left: 35px;
+        }
+      }
+      .grey_circle {
+        @include grey_circle;
+        right: 105px;
+        @media #{$mobile} {
+          right: 65px;
+        }
+      }
+      @media #{$mobile} {
+        margin: 25px auto 15px;
+        width: 100%;
+        font-size: 14px;
+      }
+      .left {
+        float: left;
+        border-top: solid 2px #196ecb;
+        color: #1b1b1b;
+        width: 30%;
+        padding: 10px 0 0 30px;
+        box-sizing: border-box;
+        @media #{$mobile} {
+          padding: 5px 0 0;
+        }
+      }
+      .right {
+        float: right;
+        border-top: solid 2px #dadada;
+        color: #b8b8b8;
+        width: 70%;
+        padding: 10px 30px 0 0;
+        box-sizing: border-box;
+        text-align: right;
+        @media #{$mobile} {
+          padding: 5px 0 0;
+        }
+      }
+    }
+    .plan_wrap {
+      background: #fff;
+      border: solid 1px #ededed;
+      display: flex;
+      &.step2 {
+        .plan_but {
+          user-select: none;
+          cursor: not-allowed;
+        }
+      }
+      @media #{$mobile} {
+        flex-direction: column;
+      }
+      .plan {
+        width: 332px;
+        position: relative;
+        @media #{$ipad} {
+          width: 33.33%;
+        }
+        @media #{$mobile} {
+          width: 100%;
+        }
+        &.plan2 {
+          border-left: solid 1px #ededed;
+          border-right: solid 1px #ededed;
+        }
+        .plan_name {
+          background: #2b2b2b;
+          border-top: solid 4px #dc3e15;
+          padding: 12px 30px;
+          color: $white;
+          font-size: 20px;
+          font-weight: 700;
+          @media #{$mobile} {
+            font-size: 18px;
+            padding: 8px 20px;
+          }
+        }
+        .plan_cost {
+          background: #212121;
+          padding: 22px 30px;
+          color: #ff9852;
+          font-size: 15px;
+          @media #{$mobile} {
+            font-size: 14px;
+            padding: 18px 20px;
+          }
+          sup {
+            font-size: 18px;
+            @media #{$mobile} {
+              font-size: 16px;
+            }
+          }
+          span {
+            font-size: 32px;
+            margin: 0 5px;
+            @media #{$mobile} {
+              font-size: 28px;
+            }
+          }
+        }
+        .plan_info {
+          padding: 22px 30px 72px;
+          @media #{$mobile} {
+            padding: 18px 20px 50px;
+          }
+          .plan_row {
+            margin-bottom: 35px;
+            font-size: 15px;
+            @media #{$mobile} {
+              margin-bottom: 25px;
+              font-size: 14px;
+            }
+            .plan_txt {
+              margin-bottom: 6px;
+            }
+            .plan_img {
+              img {
+                margin-right: 15px;
+                @media #{$mobile} {
+                  margin-right: 10px;
+                }
+                &:last-child {
+                  margin: 0;
+                }
+              }
+            }
+          }
+          .plan_but {
+            background: #00a6e1;
+            font-size: 16px;
+            border: solid 1px #00a6e1;
+            width: 273px;
+            box-sizing: border-box;
+            padding: 10px 95px;
+            display: block;
+            color: $white;
+            margin: 30px auto;
+            border-radius: 5px;
+            @extend .td_none;
+            position: absolute;
+            bottom: 0;
+            transition: 0.3s ease;
+            &:hover, &.active {
+              background: #666;
+            }
+            @media #{$ipad} {
+              width: 80%;
+              padding: 10px 0;
+              text-align: center;
+              box-sizing: border-box;
+              left: 50%;
+              margin-left: -40%;
+            }
+            @media #{$mobile} {
+              width: 90%;
+              margin-left: -45%;
+              bottom: -15px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+/**
+ * @file
+ * Common CSS.
+ */
+
+.footer {
+	background: #151515;
+	padding: 60px 0 65px;
+	@media #{$mobile} {
+		padding: 20px 0;
+	}
+	.container {
+		width:950px;
+		@media #{$ipad} {
+	    width: 95%;
+	  }
+	  @media #{$mobile} {
+	  	width: 90%;
+	  }
+	}
+	ul {
+		display: inline-block;
+		vertical-align: top;
+		width: 186px;
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		@media #{$ipad} {
+	    width: 17%;
+	    margin-right: 3%;
+	    &:last-child {
+	    	margin-right: 0;
+	    }
+	  }
+	  @media #{$mobile} {
+	  	width: 100%;
+	  	margin-bottom: 30px;
+	  }
+		li {
+			margin-bottom: 10px;
+			@media #{$mobile} {
+		  	margin-bottom: 5px;
+		  }
+			&:first-child {
+				margin-bottom: 20px;
+				@media #{$mobile} {
+			  	margin-bottom: 10px;
+			  }
+				a {
+					font-weight: 700;
+				}
+			}
+			a {
+				color: #fff;
+				font-weight: 400;
+				font-size: 13px;
+				@include txt_dcr;
+			}
+		}
+	}
+}
+
+.copyright_footer {
+	background: #111111;
+	padding: 20px 0;
+	.container {
+		overflow: hidden;
+		.left {
+			color: $white;
+			font-size: 13px;
+			float: left;
+		}
+		.right {
+			float: right;
+			@media #{$mobile} {
+		  	float: left;
+		  	margin-top: 5px;
+		  	clear: both;
+		  }
+			ul {
+				@include common_ul;
+				li {
+					display: inline-block;
+					position: relative;
+					&:after {
+						content: '';
+						width: 1px;
+						height: 16px;
+						position: absolute;
+						background: #fff;
+						margin-left: 5px;
+						top: 3px;
+					}
+					&:last-child {
+						margin-left: 7px;
+						&:after {
+							display: none;
+						}
+					}
+					a {
+						font-size: 13px;
+						@include txt_dcr;
+					}
+				}
+			}
+		}
+	}
+}
